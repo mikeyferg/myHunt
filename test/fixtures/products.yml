@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                     :integer          not null, primary key
+#  ph_post_id             :integer
+#  ph_post_name           :string
+#  ph_post_tagline        :string
+#  ph_post_screenshot_url :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ph_post_id: 1
+  ph_post_name: MyString
+  ph_post_tagline: MyString
+  ph_post_screenshot_url: MyString
+  string: MyString
+
+two:
+  ph_post_id: 1
+  ph_post_name: MyString
+  ph_post_tagline: MyString
+  ph_post_screenshot_url: MyString
+  string: MyString
