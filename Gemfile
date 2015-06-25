@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'annotate', '~> 2.6.6'
 gem 'devise'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry-byebug'
