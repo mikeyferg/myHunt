@@ -1,4 +1,12 @@
+<p><%= link_to "Back", users_path %></p>
 <h1>Your Profile</h1>
 
-<h3>Name: <%=@user.username %></h3>
-<h3>User Id: <%=@user.user_id %></h3>
+<h3>Name: <%=@user.ph_username %></h3>
+<%= image_tag(@user.ph_image_url) %>
+
+<h3>User Products </h3>
+<% @user.products.each do |product| %>
+<p><%= product.ph_post_name %></p>
+<p><%= product.ph_post_tagline %></p>
+<p><%= image_tag(product.ph_post_screenshot_url, size: "100x100") %></p>
+<% end %>

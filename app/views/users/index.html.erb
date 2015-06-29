@@ -1,0 +1,6 @@
+<h1> Admin list of all Users </h1>
+
+<% @users.each do |user| %>
+<p>Username: <%=link_to user.ph_username, user_path(user) %></p>
+<p><%= image_tag(user.ph_image_url) %></p>
+<% end %>
