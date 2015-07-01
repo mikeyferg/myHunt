@@ -7,6 +7,6 @@
 <h3>User Products </h3>
 <% @user.products.each do |product| %>
 <p><%= product.ph_post_name %></p>
-<p><%= product.ph_post_tagline %></p>
+<p><%=link_to product.ph_post_tagline, mention_path(product.id, user_id: params[:id]) %></p>
 <p><%= image_tag(product.ph_post_screenshot_url, size: "100x100") %></p>
 <% end %>

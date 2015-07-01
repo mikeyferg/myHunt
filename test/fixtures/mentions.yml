@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: mentions
+#
+#  id                  :integer          not null, primary key
+#  mention_title       :string
+#  mention_description :text
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  product_id          :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mention_title: MyString
+  mention_description: MyText
+
+two:
+  mention_title: MyString
+  mention_description: MyText

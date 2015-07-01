@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
   resources :users
   resources :products
+  resources :mentions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'static_pages#landing_page'
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  #match '/logout', to: 'sessions#destroy', via: [:get, :post]
 
+#  get '/auth/:provider/callback', to: 'sessions#create'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

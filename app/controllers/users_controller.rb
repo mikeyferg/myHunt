@@ -6,8 +6,10 @@ class UsersController < ApplicationController
     @user = find_user
   end
 
+  def self.create_with_omniauth(info)
+   create(name: info['name'])
+  end
   private
-
   def users_params
     params.require(:user).permit(:username, :user_id)
   end
