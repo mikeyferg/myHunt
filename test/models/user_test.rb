@@ -8,6 +8,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  ph_image_url :string
+#  name         :string
 #
 
 require 'test_helper'

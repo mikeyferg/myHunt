@@ -11,15 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630034518) do
+ActiveRecord::Schema.define(version: 20150702033746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "identities", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "avatar"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.boolean  "expires"
+    t.string   "name"
   end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "mentions", force: :cascade do |t|
     t.string   "mention_title"
@@ -49,6 +59,8 @@ ActiveRecord::Schema.define(version: 20150630034518) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "ph_image_url"
+    t.string   "name"
   end
 
+  add_foreign_key "identities", "users"
 end

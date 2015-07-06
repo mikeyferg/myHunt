@@ -1,12 +1,25 @@
-<p><%= link_to "Back", users_path %></p>
-<h1>Your Profile</h1>
+<div class="user_show">
 
-<h3>Name: <%=@user.ph_username %></h3>
-<%= image_tag(@user.ph_image_url) %>
+  <div class="user">
+  <%= image_tag('http://betakit.com/wp-content/uploads/2015/03/product-hunt-kitten.png', height: '100px', class: "ph_cat") %>
+    <%= image_tag(@user.ph_image_url, height:'50px', class: 'user_pic') %>
 
-<h3>User Products </h3>
-<% @user.products.each do |product| %>
-<p><%= product.ph_post_name %></p>
-<p><%=link_to product.ph_post_tagline, mention_path(product.id, user_id: params[:id]) %></p>
-<p><%= image_tag(product.ph_post_screenshot_url, size: "100x100") %></p>
-<% end %>
+
+    <h3>Welcome, <%=@user.name %></h3>
+  <br>
+
+  </div>
+  <div class= "logout_div">
+      <%= link_to 'Log Out', logout_path, method: :delete, class: 'logout' %>
+  </div>
+  <div class="products">
+    <h1>My Favorite Products</h1>
+
+      <% @user.products.each do |product| %>
+        <div class="product col-sm-12 col-md-6 col-lg-4">
+          <h2><%=link_to product.ph_post_name, mention_path(product.id, user_id: params[:id]) %></h2>
+          <p><%= image_tag(product.ph_post_screenshot_url, height: '300px', class:'img-responsive') %></p>
+        </div>
+      <% end %>
+  </div>
+</div>
