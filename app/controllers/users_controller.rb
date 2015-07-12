@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = find_user
+    #@user = User.find(14)
     @populate_user_products = ProductHunter.get_user_upvoted_product_details(@user)
   end
 

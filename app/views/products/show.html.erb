@@ -1,0 +1,9 @@
+<p><%= link_to "Back", user_path(params[:user_id]) %></p>
+
+
+<h1><%= @product.ph_post_name %></h1>
+
+<% @product.mentions.each do |mention| %>
+<h3><%=link_to mention.mention_title, '' %></h3>
+<p><%= mention.mention_description %></p>
+<% end %>
