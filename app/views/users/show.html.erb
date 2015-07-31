@@ -17,9 +17,10 @@
           <h2><%=link_to product.ph_post_name, product_path(product.id, user_id: params[:id]) %></h2>
           <p><%= image_tag(product.ph_post_screenshot_url, height: '300px', class:'img-responsive') %></p>
           <div class="mention">
+            <h4>-Latest News-</h4>
             <% product.mentions.each do |mention| %>
-              <h3><%= link_to mention.mention_title, '' %></h3>
-              <p><%= mention.mention_description %></p>
+              <h5><%= link_to mention.mention_title, mention.url %>- <%= mention.mention_description %></h5>
+
             <% end %>
           </div>
         </div>

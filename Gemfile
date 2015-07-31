@@ -32,7 +32,8 @@ gem 'hunting_season'
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-producthunt', :git => 'git://github.com/lukaszkorecki/omniauth-producthunt.git'
-
+#gem 'simple-rss'
+gem 'feedjira'
 
 group :development, :test do
   gem 'pry-byebug'

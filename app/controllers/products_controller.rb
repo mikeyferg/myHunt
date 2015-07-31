@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
-
+  require 'rss_parser.rb'
   def show
     @product = find_product
-
-
-  end
+    @entry = RssParser.rss
+ end
 
   private
   def find_product
