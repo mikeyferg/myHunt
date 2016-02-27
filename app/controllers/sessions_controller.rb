@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 #binding.pry
     if signed_in?
       if @identity.user == current_user
-
+      #  binding.pry
         # User is signed in so they are trying to link an identity with their
         # account. But we found the identity and the user associated with it
         # is the current user. So the identity is already associated with
@@ -60,16 +60,12 @@ class SessionsController < ApplicationController
     end
   end
 
-
   def destroy
     self.current_user = nil
+    #Ssession[:user_id] = nil
     flash.notice = "You have successfully logged out"
     redirect_to root_path
   end
-#
-# def create
-#   render :text => request.env['omniauth.auth']
-#   #render :text => request.env['omniauth.auth'][0].to_yaml
-# end
+
 
 end

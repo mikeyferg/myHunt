@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713231951) do
+ActiveRecord::Schema.define(version: 20151005014636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.string   "url"
+    t.string   "status"
+  end
 
   create_table "identities", force: :cascade do |t|
     t.datetime "created_at",       null: false
@@ -32,12 +45,15 @@ ActiveRecord::Schema.define(version: 20150713231951) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "mentions", force: :cascade do |t|
-    t.string   "mention_title"
-    t.text     "mention_description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "product_id"
     t.string   "url"
+    t.string   "status"
+    t.string   "source"
+    t.string   "secret"
   end
 
   create_table "products", force: :cascade do |t|

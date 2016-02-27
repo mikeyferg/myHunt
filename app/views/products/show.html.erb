@@ -3,15 +3,24 @@
 
 <h1><%= @product.ph_post_name %></h1>
 
+<% if @organization != nil%>
+  <% if @organization.short_description != nil%>
+    <p><%= @organization.short_description %></p>
+  <% end %>
+  <% if @organization.homepage_url != nil%>
+    <p><%= @organization.homepage_url %></p>
+  <% end %>
+  <% if @organization.websites != nil%>
+    <% @organization.websites.each do |website| %>
+  	 <p><%= website.url %> </p>
+     <% end %>
+  <% end %>
+  <% if @organization.news %>
+    <% @organization.news.each |news_article| %>
+      <%= news_article.title %>
+    <% end %>
+  <% end %>
 
 
-<ul>
-  <%@entry.each do |t|%>
-  <li class= "product_mentions2">
-    <%= link_to "#{t.title}", "#{t.url}",:target => "_blank", :class => "product_mentions2" %>
 
-    <p><%= simple_format(t.summary, class: "summary") %></p>
-    <p><%= t.published %></p>
-  </li>
-  <%end%>
-</ul>
+<% end %>

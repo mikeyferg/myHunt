@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -34,6 +34,8 @@ gem 'omniauth'
 gem 'omniauth-producthunt', :git => 'git://github.com/lukaszkorecki/omniauth-producthunt.git'
 #gem 'simple-rss'
 gem 'feedjira'
+gem 'crunchbase-ruby-library'
+gem 'superfeedr_engine'
 
 group :development, :test do
   gem 'pry-byebug'
