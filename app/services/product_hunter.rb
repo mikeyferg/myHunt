@@ -13,7 +13,7 @@ module ProductHunter
 
   def self.get_user_upvoted_product_details(user)
     user_info = ProductHunter.get_user(user)
-  binding.pry
+  #binding.pry
     votes_array = user_info["votes"]
 
     votes_array.each do |vote|
